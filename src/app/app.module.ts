@@ -7,10 +7,11 @@ import { RouterModule } from '@angular/router';
 import { CategoryComponent } from './category/category.component';
 import { RecipeViewerComponent } from './recipe-viewer/recipe-viewer.component';
 import { RecipeExplorerComponent } from './recipe-explorer/recipe-explorer.component';
+import { CategoryViewerComponent } from './category-viewer/category-viewer.component';
 
 @NgModule({ 
   declarations: [
-    AppComponent,routerComponent, CategoryComponent, RecipeViewerComponent, RecipeExplorerComponent
+    AppComponent,routerComponent, CategoryComponent, RecipeViewerComponent, RecipeExplorerComponent, CategoryViewerComponent
   ],
   imports: [
     BrowserModule,

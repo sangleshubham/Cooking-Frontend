@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { CookingService } from '../cooking.service';
 
 @Component({
   selector: 'app-recipe-explorer',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeExplorerComponent implements OnInit {
 
-  constructor() { }
+  categories = []
+
+  constructor(private titleService: Title,
+    private cookingService: CookingService
+    ) { }
 
   ngOnInit(): void {
+
+    this.titleService.setTitle('Homepage');
+
+    this.cookingService.getRecipes().subscribe((res) => {
+      this.categories = res;
+    });
   }
 
 }

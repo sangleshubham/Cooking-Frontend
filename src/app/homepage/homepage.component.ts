@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.titleService.setTitle('Homepage');
 
-    this.cookingService.getCategory().subscribe((res) => {
+    this.cookingService.getCategoryForHomepage().subscribe((res) => {
       this.categories = res.category;
       this.latestRecipes = res.recipe;
     });

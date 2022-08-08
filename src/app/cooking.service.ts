@@ -15,11 +15,25 @@ export class CookingService {
     return `${environment.backEndDomain}/${path}`
   }
 
-  getCategory(): Observable<any> {
+  getCategoryForHomepage(): Observable<any> {
     return this.http.get(this.generateUrl('getCategoriesHomepage'))
   }
+  getCategory(): Observable<any> {
+    return this.http.get(this.generateUrl('getCategories'))
+  }
 
+  getCategories(id : String): Observable<any> {
+    return this.http.get(this.generateUrl('getCatagory/')+id)
+  }
+
+  getRecipe(id : String): Observable<any> {
+    return this.http.get(this.generateUrl('getRecipe/')+id)
+  }
+
+
+  getRecipes(): Observable<any> {
+    return this.http.get(this.generateUrl('getRecipes'))
+  }
   
-
 
 }

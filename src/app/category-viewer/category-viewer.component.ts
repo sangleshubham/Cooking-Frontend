@@ -4,13 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import { CookingService } from '../cooking.service';
 
 @Component({
-  selector: 'app-recipe-viewer',
-  templateUrl: './recipe-viewer.component.html',
-  styleUrls: ['./recipe-viewer.component.scss']
+  selector: 'app-category-viewer',
+  templateUrl: './category-viewer.component.html',
+  styleUrls: ['./category-viewer.component.scss']
 })
-export class RecipeViewerComponent implements OnInit {
-
-  recipe:any = undefined
+export class CategoryViewerComponent implements OnInit {
+  categories:any = undefined
 
 
   constructor(private titleService: Title,
@@ -18,12 +17,12 @@ export class RecipeViewerComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Recipe Viewer');
+    this.titleService.setTitle('Category Viewer');
     this.route.params.subscribe( (param)=>{
       console.log(param['id'])
-      this.cookingService.getRecipe(param['id']).subscribe((res) => {
+      this.cookingService.getCategories(param['id']).subscribe((res) => {
         console.log(res)
-        this.recipe = res[0]
+        this.categories = res
       });
     } )
     
