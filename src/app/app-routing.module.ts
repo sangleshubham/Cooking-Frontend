@@ -6,12 +6,14 @@ import { CategoryComponent } from './category/category.component';
 import { RecipeExplorerComponent } from './recipe-explorer/recipe-explorer.component';
 import { RecipeViewerComponent } from './recipe-viewer/recipe-viewer.component';
 import { CategoryViewerComponent } from './category-viewer/category-viewer.component';
+import { SearchComponent } from './search/search.component';
 
 
 const routes:Routes = [
   { path:'', component : HomepageComponent },
   { path:'categories', component : CategoryComponent },
   { path:'explore-latest', component : RecipeExplorerComponent },
+  { path:'search', component : SearchComponent },
   { path:'recepie/:id', component : RecipeViewerComponent },
   { path:'about', component : HomepageComponent },
   { path:'submit-recipe', component : HomepageComponent },

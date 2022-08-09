@@ -33,8 +33,8 @@
                 <li><a routerLink="/contact" class="nav-link px-2 link-dark">Contact</a></li>
             </ul>
 
-            <form action="/search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            <form action="/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input [(ngModel)]="searchText" (ngModelChange)="getSearchData($event)" type="search" name="search" class="form-control" placeholder="Search..." aria-label="Search">
             </form>
                 <a outerLink="/login" class="d-block link-dark text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="assets/icon.png" alt="mdo" width="32" height="32" class="rounded-circle">

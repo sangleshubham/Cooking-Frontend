@@ -8,16 +8,19 @@ import { CategoryComponent } from './category/category.component';
 import { RecipeViewerComponent } from './recipe-viewer/recipe-viewer.component';
 import { RecipeExplorerComponent } from './recipe-explorer/recipe-explorer.component';
 import { CategoryViewerComponent } from './category-viewer/category-viewer.component';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({ 
   declarations: [
-    AppComponent,routerComponent, CategoryComponent, RecipeViewerComponent, RecipeExplorerComponent, CategoryViewerComponent
+    AppComponent,routerComponent, CategoryComponent, RecipeViewerComponent, RecipeExplorerComponent, CategoryViewerComponent, SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule 
+    RouterModule ,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

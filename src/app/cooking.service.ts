@@ -9,6 +9,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CookingService {
 
+  searchData = []
+  oldApplication : String  = ''
+
   constructor(private http:HttpClient) { }
 
   generateUrl(path : string){
@@ -34,6 +37,16 @@ export class CookingService {
   getRecipes(): Observable<any> {
     return this.http.get(this.generateUrl('getRecipes'))
   }
+
+  getSearch(key : String): Observable<any> {
+    
+    let body = {
+      "search" : key
+    }
+
+    return this.http.post(this.generateUrl('search') , body)
+  }
   
+
 
 }

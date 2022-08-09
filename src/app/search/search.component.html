@@ -1,0 +1,19 @@
+<h1 class="pb-4">Explore Recepie</h1>
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active" routerLink="/categories" aria-current="page">Explore Recepie</li>
+    </ol>
+  </nav>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 mb-4">
+<a routerLink="/recepie/{{category['_id']}}" *ngFor="let category of cookingService.searchData" class="col text-center category__link">
+      
+    <div class="category__img shadow ">
+      <img src="../../assets/img/{{category['image']}}" alt="View All Categories" loading="lazy">
+    </div>
+    <div class="pt-1">{{category['Name']}}</div>
+  </a>
+</div>
